@@ -5,7 +5,7 @@ import 'package:haienglish/models/course.dart';
 import 'package:haienglish/models/user.dart';
 
 class ApiService {
-  static const String defaultBaseUrl = 'http://172.1.3.59:5000';
+  static const String defaultBaseUrl = 'https://haienglish.pythonanywhere.com';
   static String _currentBaseUrl = defaultBaseUrl;
 
   static String get baseUrl => _currentBaseUrl;
