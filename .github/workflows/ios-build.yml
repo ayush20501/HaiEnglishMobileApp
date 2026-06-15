@@ -1,4 +1,4 @@
-name: iOS Unsigned Build
+name: iOS Simulator Build
 
 on:
   push:
@@ -24,18 +24,17 @@ jobs:
         run: flutter pub get
         working-directory: mobileappuiflutter
 
-      - name: Build iOS
-        run: flutter build ios --no-codesign --release
+      - name: Build iOS Simulator
+        run: flutter build ios --simulator --no-codesign
         working-directory: mobileappuiflutter
 
-      - name: Package into IPA
+      - name: Package Simulator App
         run: |
-          mkdir Payload
-          cp -r mobileappuiflutter/build/ios/iphoneos/Runner.app Payload/
-          zip -r app.ipa Payload
+          cd mobileappuiflutter/build/ios/iphonesimulator
+          zip -r ../../../app.zip Runner.app
 
-      - name: Upload Unsigned IPA
+      - name: Upload Simulator Zip
         uses: actions/upload-artifact@v4
         with:
-          name: unsigned-ios-app
-          path: app.ipa
+          name: simulator-ios-app
+          path: app.zip

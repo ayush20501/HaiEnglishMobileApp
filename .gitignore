@@ -3,11 +3,8 @@
 .idea/
 .vscode/
 
-mobileappbackend/venv/
-mobileappbackend/__pycache__/
-mobileappbackend/learning.db
-mobileappbackend/*.log
-mobileappbackend/instance/
+Tesol Prime/
+mobileappbackend/
 
 mobileappuiflutter/.dart_tool/
 mobileappuiflutter/build/
